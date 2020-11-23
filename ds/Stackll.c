@@ -35,7 +35,7 @@ void display() {
         printf("The stack is empty");
     }
     else {
-        while(top->next != NULL) {
+        while(temp != NULL) {
             printf("%d",temp->data);
             printf(" ");
             temp = temp->next;
@@ -56,7 +56,7 @@ void peek() {
 void pop () {
     temp = top;
     if(top == NULL) {
-        printf("Underflow");
+        printf("Underflow \n");
     }
     else {
         printf("The popped element is %d \n",top->data);        
