@@ -40,16 +40,17 @@ void dequeue() {
  }
 
 void display() {
-    printf("The current queue is : ");
     int i = front;
     if(front == -1 && rear == -1) {
-        printf("The queue is empty");
+        printf("The queue is empty \n");
     }
     else {
+        printf("The current queue is : ");
         while(i != rear) {
             printf("%d ",queue[i]);
             i = (i+1)%5;
         }
+        printf("%d",queue[i]);
         printf("\n");
     }
 }
@@ -58,8 +59,8 @@ int main() {
     enqueue(1);
     enqueue(2);
     enqueue(3);
-    enqueue(4);
-    enqueue(5);
     dequeue();
-    enqueue(6);
+    dequeue();
+    dequeue();
+    dequeue();
 }

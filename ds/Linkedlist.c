@@ -24,14 +24,20 @@ int main() {
     printf("Enter the no of elements");
     scanf("%d",&n);
     createList(n);
+    insertAtStart(5);
+    insertAtEnd(6);
+    // insertAtPos(2,4);
+    deleteNodeFromStart();
+    deleteNodeFromEnd();
 }
 
 //Creating list
 void createList(int n) {
-    printf("Enter the data for the linked list");
     for(int i=0;i<n;i++) {
         newNode = (struct Node*)malloc(sizeof(struct Node));
         newNode->next = NULL;
+        printf("Enter data for the node");
+        scanf("%d",&newNode->data);
         if(head == NULL) {
             head = newNode;
             temp = head;
@@ -73,13 +79,15 @@ void insertAtEnd(int x) {
         }
         temp->next = newNode;
     }
+    print();
 }
 
 // Printing ll
 void print() {
     temp = head;
+    printf("The current list is : ");
     while(temp != NULL) {
-        printf("%d",temp->data);
+        printf("%d ",temp->data);
         temp = temp->next;
     }
     printf("\n");
@@ -107,7 +115,7 @@ void insertAtPos(int x,int pos) {
         newNode = (struct Node*)malloc(sizeof(struct Node));
         newNode->data;
         temp = head;
-        while(i<pos) {
+        while(i<pos-1) {
             temp = temp->next;
             i++;
         }
